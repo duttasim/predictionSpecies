@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Load the model (replace with your actual model path)
 model = joblib.load('./src/models/speciesPrediction.pkl')
 
-@app.route('/speciesPrediction', methods=['POST'])
+@app.route('/')
 def speciesPrediction():
     """
     Endpoint for predicting the Iris species based on input features.
@@ -38,7 +38,7 @@ def speciesPrediction():
         
         # Convert numerical predictions to species names
         species_mapping = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
-        final_predictions = [{'Iris Species Prediction': species_mapping[pred]} for pred in predictions]
+        final_predictions = [{'Iris Species Prediction': pred} for pred in predictions]
         
         # Return the predictions as a JSON response
         return jsonify(final_predictions)
