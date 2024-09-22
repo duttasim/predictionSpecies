@@ -1,30 +1,51 @@
-import streamlit as st
-import joblib
-import numpy as np
+# Importing the necessary libraries
 import pandas as pd
-from pycaret.classification import *
+from flask import request, Flask, jsonify
+import joblib
 
-# Load the model
-model = load_model('./src/models/speciesPrediction')
+# Initialize Flask application
+app = Flask(__name__)
 
-# Define Streamlit app
-st.title("Iris Species Prediction")
+# Load the model (replace with your actual model path)
+model = joblib.load('./src/models/speciesPrediction.pkl')
 
-# Instructions
-st.write("Enter the following features to predict the Iris species:")
+@app.route('/speciesPrediction', methods=['POST'])
+def speciesPrediction():
+    """
+    Endpoint for predicting the Iris species based on input features.
+    """
+    try:
+        # Get JSON data from request
+        data = request.json
+        
+        # Convert the input data into a pandas DataFrame
+        df = pd.DataFrame(data["data"])
+        
+        # Ensure the DataFrame contains the expected columns for the Iris dataset
+        df = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
+        
+        # Cast the columns to the appropriate data types
+        df['sepal_length'] = df['sepal_length'].astype('float64')
+        df['sepal_width'] = df['sepal_width'].astype('float64')
+        df['petal_length'] = df['petal_length'].astype('float64')
+        df['petal_width'] = df['petal_width'].astype('float64')
+        
+        # Prepare input for the model
+        input_data = df.iloc[:, :]
+        
+        # Make predictions using the loaded model
+        predictions = model.predict(input_data)
+        
+        # Convert numerical predictions to species names
+        species_mapping = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
+        final_predictions = [{'Iris Species Prediction': species_mapping[pred]} for pred in predictions]
+        
+        # Return the predictions as a JSON response
+        return jsonify(final_predictions)
+    
+    except Exception as e:
+        return jsonify({'error': str(e)})
 
-# Create input fields for each feature
-sepal_length = st.number_input('Sepal Length (cm)', value=0.0)
-sepal_width = st.number_input('Sepal Width (cm)', value=0.0)
-petal_length = st.number_input('Petal Length (cm)', value=0.0)
-petal_width = st.number_input('Petal Width (cm)', value=0.0)
-
-# Collect features into an array
-features = pd.DataFrame({'sepal_length':[sepal_length], 'sepal_width':[sepal_width], 'petal_length':[petal_length], 'petal_width':[petal_width]})
-# Prediction button
-if st.button('Predict'):
-    prediction = predict_model(model, data=features)
-    species = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
-    print(prediction)
-    st.success(f"Prediction: {prediction['prediction_label'].iloc[0]}")
-    #st.write(f'Prediction: {species[int(prediction[0])]}')
+# Run the Flask app
+if __name__ == '__main__':
+    app.run(debug=False, host="0.0.0.0", port=5000)
