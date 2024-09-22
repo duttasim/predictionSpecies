@@ -1,8 +1,9 @@
 Flask
 joblib
 numpy
-pandas
+pandas<2.0.0
 scikit-learn
 flask
-pycaret[full]
+pycaret
 pytest
+streamlit

@@ -18468,3 +18468,11 @@ Alternately, you can install this by running `pip install pycaret[models]`
 2024-09-22 17:18:04,354:INFO:[LightGBM] [Warning] bagging_freq is set=0, subsample_freq=0 will be ignored. Current value: bagging_freq=0
 2024-09-22 17:18:04,620:INFO:Visual Rendered Successfully
 2024-09-22 17:18:04,733:INFO:plot_model() successfully completed......................................
+2024-09-22 19:36:10,023:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:36:10,051:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:36:10,051:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:36:10,051:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.

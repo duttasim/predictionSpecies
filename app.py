@@ -1,27 +1,30 @@
-from flask import Flask, request, jsonify,render_template
+import streamlit as st
 import joblib
 import numpy as np
+import pandas as pd
+from pycaret.classification import *
 
-# Initialize Flask applications
-app = Flask(__name__)
+# Load the model
+model = load_model('./src/models/speciesPrediction')
 
-model = joblib.load('./src/models/speciesPrediction.pkl')
+# Define Streamlit app
+st.title("Iris Species Prediction")
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+# Instructions
+st.write("Enter the following features to predict the Iris species:")
 
+# Create input fields for each feature
+sepal_length = st.number_input('Sepal Length (cm)', value=0.0)
+sepal_width = st.number_input('Sepal Width (cm)', value=0.0)
+petal_length = st.number_input('Petal Length (cm)', value=0.0)
+petal_width = st.number_input('Petal Width (cm)', value=0.0)
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = request.get_json(force=True)
-    features = np.array(data['features']).reshape(1, -1)
-    prediction = model.predict(features)
-    response = {
-        'prediction': int(prediction[0])
-    }
-    return jsonify(response)
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+# Collect features into an array
+features = pd.DataFrame({'sepal_length':[sepal_length], 'sepal_width':[sepal_width], 'petal_length':[petal_length], 'petal_width':[petal_width]})
+# Prediction button
+if st.button('Predict'):
+    prediction = predict_model(model, data=features)
+    species = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
+    print(prediction)
+    st.success(f"Prediction: {prediction['prediction_label'].iloc[0]}")
+    #st.write(f'Prediction: {species[int(prediction[0])]}')

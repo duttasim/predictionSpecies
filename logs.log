@@ -1,0 +1,114 @@
+2024-09-22 19:55:47,406:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:55:47,807:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:55:47,807:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:55:47,807:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:56:37,800:INFO:Initializing load_model()
+2024-09-22 19:56:37,801:INFO:load_model(model_name=./src/models/speciesPrediction.pkl, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:23,637:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:57:23,637:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:57:23,637:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:57:23,637:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-09-22 19:57:27,679:INFO:Initializing load_model()
+2024-09-22 19:57:27,680:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:37,873:INFO:Initializing load_model()
+2024-09-22 19:57:37,873:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:37,989:INFO:Initializing predict_model()
+2024-09-22 19:57:37,989:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000029BCC33E700>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['sepal_length', 'sepal_width',
+                                             'petal_length', 'petal_width'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='m...equent'))),
+                ('actual_estimator',
+                 LGBMClassifier(bagging_fraction=0.7897102639158713,
+                                bagging_freq=0,
+                                feature_fraction=0.6690658984709096,
+                                learning_rate=0.14815552474042337,
+                                min_child_samples=38,
+                                min_split_gain=0.3576558496108452,
+                                n_estimators=266, n_jobs=-1, num_leaves=161,
+                                random_state=123,
+                                reg_alpha=7.0905445369299996e-09,
+                                reg_lambda=3.972381289197141e-09))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000029BCC35C040>)
+2024-09-22 19:57:37,989:INFO:Checking exceptions
+2024-09-22 19:57:37,989:INFO:Preloading libraries
+2024-09-22 19:57:37,994:INFO:Set up data.
+2024-09-22 19:57:38,001:INFO:Set up index.
+2024-09-22 19:57:46,991:INFO:Initializing load_model()
+2024-09-22 19:57:46,992:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:50,099:INFO:Initializing load_model()
+2024-09-22 19:57:50,099:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:55,940:INFO:Initializing load_model()
+2024-09-22 19:57:55,941:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:58,471:INFO:Initializing load_model()
+2024-09-22 19:57:58,471:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:58,688:INFO:Initializing load_model()
+2024-09-22 19:57:58,688:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:57:58,730:INFO:Initializing predict_model()
+2024-09-22 19:57:58,730:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000029BC7CEB550>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['sepal_length', 'sepal_width',
+                                             'petal_length', 'petal_width'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='m...equent'))),
+                ('actual_estimator',
+                 LGBMClassifier(bagging_fraction=0.7897102639158713,
+                                bagging_freq=0,
+                                feature_fraction=0.6690658984709096,
+                                learning_rate=0.14815552474042337,
+                                min_child_samples=38,
+                                min_split_gain=0.3576558496108452,
+                                n_estimators=266, n_jobs=-1, num_leaves=161,
+                                random_state=123,
+                                reg_alpha=7.0905445369299996e-09,
+                                reg_lambda=3.972381289197141e-09))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000029BA6074F70>)
+2024-09-22 19:57:58,731:INFO:Checking exceptions
+2024-09-22 19:57:58,731:INFO:Preloading libraries
+2024-09-22 19:57:58,732:INFO:Set up data.
+2024-09-22 19:57:58,737:INFO:Set up index.
+2024-09-22 19:58:03,403:INFO:Initializing load_model()
+2024-09-22 19:58:03,403:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:58:03,618:INFO:Initializing load_model()
+2024-09-22 19:58:03,618:INFO:load_model(model_name=./src/models/speciesPrediction, platform=None, authentication=None, verbose=True)
+2024-09-22 19:58:03,668:INFO:Initializing predict_model()
+2024-09-22 19:58:03,668:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000029BCBBC5580>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('label_encoding',
+                 TransformerWrapperWithInverse(transformer=LabelEncoder())),
+                ('numerical_imputer',
+                 TransformerWrapper(include=['sepal_length', 'sepal_width',
+                                             'petal_length', 'petal_width'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=[],
+                                    transformer=SimpleImputer(strategy='m...equent'))),
+                ('actual_estimator',
+                 LGBMClassifier(bagging_fraction=0.7897102639158713,
+                                bagging_freq=0,
+                                feature_fraction=0.6690658984709096,
+                                learning_rate=0.14815552474042337,
+                                min_child_samples=38,
+                                min_split_gain=0.3576558496108452,
+                                n_estimators=266, n_jobs=-1, num_leaves=161,
+                                random_state=123,
+                                reg_alpha=7.0905445369299996e-09,
+                                reg_lambda=3.972381289197141e-09))]), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=True, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x0000029BC7CD4F70>)
+2024-09-22 19:58:03,670:INFO:Checking exceptions
+2024-09-22 19:58:03,670:INFO:Preloading libraries
+2024-09-22 19:58:03,671:INFO:Set up data.
+2024-09-22 19:58:03,677:INFO:Set up index.
