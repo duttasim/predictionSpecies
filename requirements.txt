@@ -5,6 +5,4 @@ pandas
 scikit-learn
 flask
 pycaret[full]
-json
 pytest
-app
