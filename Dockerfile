@@ -3,6 +3,7 @@ FROM python:3.8-slim
 # Install required system libraries, including libgomp
 RUN apt-get update && apt-get install -y \
     libgomp1 \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
