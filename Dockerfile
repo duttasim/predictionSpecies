@@ -1,14 +1,5 @@
 FROM python:3.8-slim
 
-# Install required system libraries, including libgomp
-RUN apt-get update && apt-get install -y \
-    libgomp1 \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Add the libgomp path to the system environment
-ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib
-
 WORKDIR /app
 
 # Copy requirements and install Python dependencies

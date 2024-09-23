@@ -30,7 +30,7 @@ if __name__ == "__main__":
         load_experiment(f,data=data)
 
     # Compare multiple models and choose the best one based on cross-validation
-    best_model = compare_models(include=['rf', 'dt', 'lightgbm', 'et'])
+    best_model = compare_models(include=['rf', 'dt'])
     
     # Print the best model selected
     print(best_model)
