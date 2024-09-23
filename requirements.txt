@@ -6,3 +6,4 @@ flask
 pycaret
 pytest
 streamlit
+lightgbm
