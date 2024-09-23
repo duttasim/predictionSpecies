@@ -6,6 +6,9 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# Add the libgomp path to the system environment
+ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib
+
 WORKDIR /app
 
 # Copy requirements and install Python dependencies
