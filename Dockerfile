@@ -1,8 +1,5 @@
 FROM python:3.8-slim
 
-# Install the necessary library
-RUN apt-get update && apt-get install -y libgomp1 && rm -rf /var/lib/apt/lists/*
-
 # Copy your application code
 COPY ./src /app
 

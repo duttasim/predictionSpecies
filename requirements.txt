@@ -1,7 +1,7 @@
 Flask
 joblib
 numpy
-pandas<2.0.0
+pandas
 flask
 pycaret
 pytest
