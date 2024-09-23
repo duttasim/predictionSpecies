@@ -9,6 +9,9 @@ COPY ./src /app
 # Set the working directory
 WORKDIR /app
 
+# Copy requirements and install Python dependencies
+COPY requirements.txt requirements.txt
+
 # Install dependencies
 RUN pip install -r requirements.txt
 
